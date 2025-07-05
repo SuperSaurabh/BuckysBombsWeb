@@ -1,247 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Bucky's Bombs – Design Studio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <title>Bucky's Bombs – Custom Print & Design Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-      /* Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-        font-family: "Poppins", sans-serif;
-        overflow: hidden; /* Prevent scroll if you want a clean look */
-      }
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background: linear-gradient(45deg, #ff003c, #c648c8, #00bfff);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+      color: #ffffff;
+    }
 
-      /* Main Container */
-      body {
-        /* Animated gradient background */
-        background: linear-gradient(45deg, #ff003c, #c648c8, #00bfff);
-        background-size: 600% 600%;
-        animation: gradientBG 15s ease infinite;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        color: #ffffff;
-      }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-      /* Keyframes for background color gradient animation */
-      @keyframes gradientBG {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 999;
+    }
 
-      /* Floating shapes */
-      .floating-shape {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.6;
-        animation: floatShape 10s ease-in-out infinite;
-        will-change: transform;
-        pointer-events: none; /* Let clicks pass through */
-      }
+    nav .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
 
-      .shape1 {
-        height: 150px;
-        width: 150px;
-        background: radial-gradient(#ffffff55, #ff00dc);
-        top: 10%;
-        left: 20%;
-        animation-delay: 0s;
-      }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-      .shape2 {
-        height: 200px;
-        width: 200px;
-        background: radial-gradient(#ffffff55, #00ffa3);
-        top: 40%;
-        left: 70%;
-        animation-delay: 2s;
-      }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
 
-      .shape3 {
-        height: 100px;
-        width: 100px;
-        background: radial-gradient(#ffffff55, #fff600);
-        top: 70%;
-        left: 10%;
-        animation-delay: 4s;
-      }
+    nav a:hover {
+      opacity: 0.7;
+    }
 
-      .shape4 {
-        height: 120px;
-        width: 120px;
-        background: radial-gradient(#ffffff55, #ff5400);
-        top: 80%;
-        left: 50%;
-        animation-delay: 6s;
-      }
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
 
-      @keyframes floatShape {
-        0% {
-          transform: translateY(0px) translateX(0px);
-        }
-        50% {
-          transform: translateY(-30px) translateX(15px);
-        }
-        100% {
-          transform: translateY(0px) translateX(0px);
-        }
-      }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.6),
+        0 0 10px rgba(255, 0, 235, 0.7),
+        0 0 20px rgba(255, 0, 235, 0.6);
+      margin-bottom: 10px;
+    }
 
-      /* Central content container */
-      .center-content {
-        text-align: center;
-        z-index: 10; /* Above shapes */
-        max-width: 90%;
-        padding: 20px;
-      }
+    .tagline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      margin-bottom: 20px;
+    }
 
-      h1 {
-        font-family: "Orbitron", sans-serif;
-        font-size: 4rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
-          0 0 10px rgba(255, 0, 235, 0.7),
-          0 0 20px rgba(255, 0, 235, 0.6);
-      }
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 35px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+    }
 
-      .tagline {
-        font-family: "Orbitron", sans-serif;
-        font-size: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 20px;
-        color: #ffffff;
-        text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
-      }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.2);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+    }
 
-      p {
-        font-size: 1.2rem;
-        line-height: 1.5;
-        color: #f0f0f0;
-        max-width: 600px;
-        margin: 0 auto 20px auto;
-      }
+    .cta-btn:hover::before {
+      left: 200%;
+    }
 
-      /* Neon button */
-      .neon-box {
-        display: inline-block;
-        padding: 20px 40px;
-        font-family: "Orbitron", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1.2rem;
-        color: #fff;
-        border: 2px solid transparent;
-        border-radius: 8px;
-        position: relative;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-      }
+    .cta-btn:hover {
+      color: #000;
+      background: #fff;
+    }
 
-      .neon-box::before,
-      .neon-box::after {
-        content: "";
-        position: absolute;
-        border: 2px solid #fff;
-        border-radius: 8px;
-        width: 0;
-        height: 0;
-        transition: all 0.3s ease-in-out;
-      }
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-      .neon-box::before {
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-      }
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-      .neon-box::after {
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 0%;
-      }
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-      .neon-box:hover::before {
-        width: 100%;
-      }
+    .service-card {
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s;
+    }
 
-      .neon-box:hover::after {
-        height: 100%;
-      }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
 
-      .neon-box:hover {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
-          0 0 10px rgba(255, 0, 235, 0.8),
-          0 0 20px rgba(255, 0, 235, 0.7),
-          0 0 40px rgba(255, 0, 235, 0.7);
-        color: #fff;
-      }
+    .service-card img {
+      width: 80px;
+      margin-bottom: 15px;
+    }
 
-      /* Footer note */
-      .footnote {
-        margin-top: 30px;
-        font-size: 0.9rem;
-        color: #cccccc;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Floating shapes for a cool background effect -->
-    <div class="floating-shape shape1"></div>
-    <div class="floating-shape shape2"></div>
-    <div class="floating-shape shape3"></div>
-    <div class="floating-shape shape4"></div>
+    /* Portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-    <!-- Centered content -->
-    <div class="center-content">
-      <h1>Bucky's Bombs</h1>
-      <div class="tagline">Custom Business Cards & T‑Shirts</div>
-      <p>
-        We're putting the finishing touches on our design lab so we can blast off
-        with stunning, custom-made business cards and bomb‑diggity T‑shirts. Our
-        order portal isn't live just yet—but it's coming in hot!
-      </p>
-      <p>
-        Want to be first in line when we launch? Join our waitlist below and
-        we'll drop you a message the moment we're ready.
-      </p>
+    .portfolio-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
-      <!-- Waitlist CTA -->
-      <a
-        href="mailto:hello@buckysbombs.com?subject=Waitlist%20Signup&body=I'd%20like%20to%20know%20when%20Bucky's%20Bombs%20design%20services%20launch!"
-        class="neon-box"
-        >Join Waitlist</a
-      >
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr;
+    }
 
-      <div class="footnote">Launching Fall 2025 · Stay tuned!</div>
-    </div>
-  </body>
-</html>
+    .testimonial {
+      background: rgba(0,0,0,0.3);
+      padding: 25px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .testimonial .author {
+      font-weight: 700;
+    }
+
+    /* Contact */
+    .contact-info {
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 10px;
+    }
+
+    /* Floating shapes */
+    .floating-shape {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: floatShape 10s ease-in-out infinite;
+      will-change: transform;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .shape1 {height: 150px;width: 150px;background: radial-gradient(#ffffff55, #ff00dc);top: 10%;left: 20%;animation-delay: 0s;}
+    .shape2 {height: 200px;width: 200px;background: radial-gradient(#ffffff55, #00ffa3);top: 40%;left: 70%;animation-delay: 2s;}
+    .shape3 {height: 100px;width: 100px;background: radial-gradient(#ffffff55, #fff600);top: 70%;left: 10%;animation-delay: 4s;}
+    .shape4 {height: 120px;width: 120px;background: radial-gradient(#ffffff55, #ff5400);top: 80%;left: 50%;animation-delay: 6s;}
+
+    @keyframes floatShape {
+      0% {transform: translateY(0px) translateX(0px);}.
+      50% {transform: translateY(-30px) translateX(15px);}.
+      100% {transform: translateY(0px) translateX(0px);}.
+    }
+
+    @media(max-width: 600px) {
+      nav ul {flex-direction: column;background: rgba(0,0,0,0.8);position: absolute;top: 60px;left: 0;width: 100%;display: none;}
+      nav ul.show {display: flex;}
+      .menu-toggle {display: block;color: #fff;font-size: 1.5
