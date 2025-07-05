@@ -1,246 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Bucky's Bombs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bucky's Bombs – Design Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden; /* Prevent scroll if you want a clean look */
-    }
-
-    /* Main Container */
-    body {
-      /* Animated gradient background */
-      background: linear-gradient(45deg, #ff003c, #c648c8, #00bfff);
-      background-size: 600% 600%;
-      animation: gradientBG 15s ease infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: #ffffff;
-    }
-
-    /* Keyframes for background color gradient animation */
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      50% {
-        background-position: 100% 50%;
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+        overflow: hidden; /* Prevent scroll if you want a clean look */
       }
-      100% {
-        background-position: 0% 50%;
+
+      /* Main Container */
+      body {
+        /* Animated gradient background */
+        background: linear-gradient(45deg, #ff003c, #c648c8, #00bfff);
+        background-size: 600% 600%;
+        animation: gradientBG 15s ease infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: #ffffff;
       }
-    }
 
-    /* Adding a bunch of floating shapes in the background */
-    .floating-shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: floatShape 10s ease-in-out infinite;
-      will-change: transform;
-      pointer-events: none; /* Let clicks pass through */
-    }
-
-    /* Different sizes, positions, and colors for shapes */
-    .shape1 {
-      height: 150px;
-      width: 150px;
-      background: radial-gradient(#ffffff55, #ff00dc);
-      top: 10%;
-      left: 20%;
-      animation-delay: 0s;
-    }
-
-    .shape2 {
-      height: 200px;
-      width: 200px;
-      background: radial-gradient(#ffffff55, #00ffa3);
-      top: 40%;
-      left: 70%;
-      animation-delay: 2s;
-    }
-
-    .shape3 {
-      height: 100px;
-      width: 100px;
-      background: radial-gradient(#ffffff55, #fff600);
-      top: 70%;
-      left: 10%;
-      animation-delay: 4s;
-    }
-
-    .shape4 {
-      height: 120px;
-      width: 120px;
-      background: radial-gradient(#ffffff55, #ff5400);
-      top: 80%;
-      left: 50%;
-      animation-delay: 6s;
-    }
-
-    @keyframes floatShape {
-      0% {
-        transform: translateY(0px) translateX(0px);
+      /* Keyframes for background color gradient animation */
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
-      50% {
-        transform: translateY(-30px) translateX(15px);
+
+      /* Floating shapes */
+      .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: floatShape 10s ease-in-out infinite;
+        will-change: transform;
+        pointer-events: none; /* Let clicks pass through */
       }
-      100% {
-        transform: translateY(0px) translateX(0px);
+
+      .shape1 {
+        height: 150px;
+        width: 150px;
+        background: radial-gradient(#ffffff55, #ff00dc);
+        top: 10%;
+        left: 20%;
+        animation-delay: 0s;
       }
-    }
 
-    /* Central content container */
-    .center-content {
-      text-align: center;
-      z-index: 10; /* Make sure it’s above the shapes */
-      max-width: 90%;
-      padding: 20px;
-    }
+      .shape2 {
+        height: 200px;
+        width: 200px;
+        background: radial-gradient(#ffffff55, #00ffa3);
+        top: 40%;
+        left: 70%;
+        animation-delay: 2s;
+      }
 
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 4rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      position: relative;
-      /* Add a cool neon glow */
-      text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.6),
-        0 0 10px rgba(255, 0, 235, 0.7),
-        0 0 20px rgba(255, 0, 235, 0.6);
-    }
+      .shape3 {
+        height: 100px;
+        width: 100px;
+        background: radial-gradient(#ffffff55, #fff600);
+        top: 70%;
+        left: 10%;
+        animation-delay: 4s;
+      }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.5;
-      color: #f0f0f0;
-      max-width: 600px;
-      margin: 0 auto 20px auto;
-    }
+      .shape4 {
+        height: 120px;
+        width: 120px;
+        background: radial-gradient(#ffffff55, #ff5400);
+        top: 80%;
+        left: 50%;
+        animation-delay: 6s;
+      }
 
-    /* Download buttons styling */
-    .download-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
+      @keyframes floatShape {
+        0% {
+          transform: translateY(0px) translateX(0px);
+        }
+        50% {
+          transform: translateY(-30px) translateX(15px);
+        }
+        100% {
+          transform: translateY(0px) translateX(0px);
+        }
+      }
 
-    .download-button img {
-      width: 160px;
-      height: auto;
-    }
+      /* Central content container */
+      .center-content {
+        text-align: center;
+        z-index: 10; /* Above shapes */
+        max-width: 90%;
+        padding: 20px;
+      }
 
-    /* Add a fancy animated “neon” border around a CTA box, if desired */
-    .neon-box {
-      display: inline-block;
-      padding: 20px 40px;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 1.2rem;
-      color: #fff;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      position: relative;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      /* Just for looks, no function */
-    }
+      h1 {
+        font-family: "Orbitron", sans-serif;
+        font-size: 4rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+          0 0 10px rgba(255, 0, 235, 0.7),
+          0 0 20px rgba(255, 0, 235, 0.6);
+      }
 
-    .neon-box::before,
-    .neon-box::after {
-      content: "";
-      position: absolute;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      width: 0;
-      height: 0;
-      transition: all 0.3s ease-in-out;
-    }
+      .tagline {
+        font-family: "Orbitron", sans-serif;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+      }
 
-    .neon-box::before {
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-    }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #f0f0f0;
+        max-width: 600px;
+        margin: 0 auto 20px auto;
+      }
 
-    .neon-box::after {
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 0%;
-    }
+      /* Neon button */
+      .neon-box {
+        display: inline-block;
+        padding: 20px 40px;
+        font-family: "Orbitron", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.2rem;
+        color: #fff;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
 
-    .neon-box:hover::before {
-      width: 100%;
-    }
+      .neon-box::before,
+      .neon-box::after {
+        content: "";
+        position: absolute;
+        border: 2px solid #fff;
+        border-radius: 8px;
+        width: 0;
+        height: 0;
+        transition: all 0.3s ease-in-out;
+      }
 
-    .neon-box:hover::after {
-      height: 100%;
-    }
+      .neon-box::before {
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+      }
 
-    .neon-box:hover {
-      text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.6),
-        0 0 10px rgba(255, 0, 235, 0.8),
-        0 0 20px rgba(255, 0, 235, 0.7),
-        0 0 40px rgba(255, 0, 235, 0.7);
-      color: #fff;
-    }
-  </style>
-</head>
-<body>
+      .neon-box::after {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 0%;
+      }
 
-  <!-- Floating shapes for a cool background effect -->
-  <div class="floating-shape shape1"></div>
-  <div class="floating-shape shape2"></div>
-  <div class="floating-shape shape3"></div>
-  <div class="floating-shape shape4"></div>
+      .neon-box:hover::before {
+        width: 100%;
+      }
 
-  <!-- Centered content -->
-  <div class="center-content">
-    <h1>Bucky's Bombs</h1>
-    <p>
-      Welcome to Bucky's Bombs!
-    </p>
+      .neon-box:hover::after {
+        height: 100%;
+      }
 
-    <!-- Download Buttons Section -->
-    <div class="download-buttons">
-      <a href="https://apps.apple.com/us/app/your-app-id" target="_blank" class="download-button">
-        <img src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store">
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.yourapp.id" target="_blank" class="download-button">
-        <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play">
-      </a>
+      .neon-box:hover {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+          0 0 10px rgba(255, 0, 235, 0.8),
+          0 0 20px rgba(255, 0, 235, 0.7),
+          0 0 40px rgba(255, 0, 235, 0.7);
+        color: #fff;
+      }
+
+      /* Footer note */
+      .footnote {
+        margin-top: 30px;
+        font-size: 0.9rem;
+        color: #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating shapes for a cool background effect -->
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    <div class="floating-shape shape4"></div>
+
+    <!-- Centered content -->
+    <div class="center-content">
+      <h1>Bucky's Bombs</h1>
+      <div class="tagline">Custom Business Cards & T‑Shirts</div>
+      <p>
+        We're putting the finishing touches on our design lab so we can blast off
+        with stunning, custom-made business cards and bomb‑diggity T‑shirts. Our
+        order portal isn't live just yet—but it's coming in hot!
+      </p>
+      <p>
+        Want to be first in line when we launch? Join our waitlist below and
+        we'll drop you a message the moment we're ready.
+      </p>
+
+      <!-- Waitlist CTA -->
+      <a
+        href="mailto:hello@buckysbombs.com?subject=Waitlist%20Signup&body=I'd%20like%20to%20know%20when%20Bucky's%20Bombs%20design%20services%20launch!"
+        class="neon-box"
+        >Join Waitlist</a
+      >
+
+      <div class="footnote">Launching Fall 2025 · Stay tuned!</div>
     </div>
-
-    <!-- Fancy neon box (totally non-functional) -->
-<!--     <div class="neon-box">
-      Hover Over This
-    </div> -->
-  </div>
-
-</body>
+  </body>
 </html>
