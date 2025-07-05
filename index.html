@@ -1,261 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Bucky's Bombs – Custom Print & Design Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
-      background: linear-gradient(45deg, #ff003c, #c648c8, #00bfff);
-      background-size: 600% 600%;
-      animation: gradientBG 15s ease infinite;
-      color: #ffffff;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(4px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      z-index: 999;
-    }
-
-    nav .logo {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 2px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.3s;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow:
-        0 0 5px rgba(255, 255, 255, 0.6),
-        0 0 10px rgba(255, 0, 235, 0.7),
-        0 0 20px rgba(255, 0, 235, 0.6);
-      margin-bottom: 10px;
-    }
-
-    .tagline {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(1.2rem, 3vw, 2rem);
-      margin-bottom: 20px;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      padding: 15px 35px;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #fff;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      transition: color 0.3s;
-    }
-
-    .cta-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.2);
-      transform: skewX(-20deg);
-      transition: left 0.5s;
-    }
-
-    .cta-btn:hover::before {
-      left: 200%;
-    }
-
-    .cta-btn:hover {
-      color: #000;
-      background: #fff;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      background: rgba(0,0,0,0.3);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-      backdrop-filter: blur(4px);
-      transition: transform 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-card img {
-      width: 80px;
-      margin-bottom: 15px;
-    }
-
-    /* Portfolio */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    /* Testimonials */
-    .testimonials {
-      display: grid;
-      gap: 30px;
-      grid-template-columns: 1fr;
-    }
-
-    .testimonial {
-      background: rgba(0,0,0,0.3);
-      padding: 25px;
-      border-radius: 12px;
-      backdrop-filter: blur(4px);
-    }
-
-    .testimonial p {
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-
-    .testimonial .author {
-      font-weight: 700;
-    }
-
-    /* Contact */
-    .contact-info {
-      text-align: center;
-    }
-
-    .contact-info p {
-      margin: 5px 0;
-    }
-
-    /* Footer */
-    footer {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 10px;
-    }
-
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; color: #fff; }
+    /* Gradient Background */
+    body { background: linear-gradient(45deg, #ff003c, #c648c8, #00bfff); background-size: 600% 600%; animation: gradientBG 15s ease infinite; }
+    @keyframes gradientBG { 0% {background-position:0% 50%} 50% {background-position:100% 50%} 100% {background-position:0% 50%} }
     /* Floating shapes */
-    .floating-shape {
-      position: fixed;
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: floatShape 10s ease-in-out infinite;
-      will-change: transform;
-      pointer-events: none;
-      z-index: -1;
+    .floating-shape { position: fixed; border-radius: 50%; opacity: .5; animation: floatShape 10s ease-in-out infinite; pointer-events:none; z-index:-1; }
+    .shape1{height:150px;width:150px;background:radial-gradient(#ffffff55,#ff00dc);top:10%;left:20%;animation-delay:0s}
+    .shape2{height:200px;width:200px;background:radial-gradient(#ffffff55,#00ffa3);top:40%;left:70%;animation-delay:2s}
+    .shape3{height:100px;width:100px;background:radial-gradient(#ffffff55,#fff600);top:70%;left:10%;animation-delay:4s}
+    .shape4{height:120px;width:120px;background:radial-gradient(#ffffff55,#ff5400);top:80%;left:50%;animation-delay:6s}
+    @keyframes floatShape { 0%{transform:translate(0)} 50%{transform:translate(15px,-30px)} 100%{transform:translate(0)} }
+    /* Navigation */
+    nav { position:fixed; top:0; left:0; width:100%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); display:flex; justify-content:space-between; align-items:center; padding:10px 20px; z-index:999; }
+    .logo { font-family:'Orbitron',sans-serif; font-size:1.5rem; letter-spacing:2px; }
+    nav ul { list-style:none; display:flex; gap:20px; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; transition:opacity .3s; }
+    nav a:hover { opacity:.7; }
+    .menu-toggle { display:none; font-size:1.8rem; cursor:pointer; user-select:none; }
+    /* Hero */
+    header.hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 20px; }
+    h1 { font-family:'Orbitron',sans-serif; font-size:clamp(2.5rem,5vw,4rem); text-transform:uppercase; letter-spacing:2px; text-shadow:0 0 5px rgba(255,255,255,.6),0 0 10px rgba(255,0,235,.7),0 0 20px rgba(255,0,235,.6); margin-bottom:10px; }
+    .tagline { font-family:'Orbitron',sans-serif; font-size:clamp(1.2rem,3vw,2rem); margin-bottom:20px; }
+    .cta-btn { display:inline-block; padding:15px 35px; border:2px solid #fff; border-radius:8px; font-family:'Orbitron',sans-serif; letter-spacing:2px; text-transform:uppercase; color:#fff; text-decoration:none; position:relative; overflow:hidden; transition:background .3s,color .3s; }
+    .cta-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:rgba(255,255,255,.2); transform:skewX(-20deg); transition:left .5s; }
+    .cta-btn:hover::before { left:200%; }
+    .cta-btn:hover { background:#fff; color:#000; }
+    section { padding:80px 20px; max-width:1200px; margin:0 auto; }
+    section h2 { font-family:'Orbitron',sans-serif; font-size:2.5rem; margin-bottom:30px; text-align:center; }
+    /* Services */
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+    .service-card { background:rgba(0,0,0,.3); border-radius:12px; padding:20px; text-align:center; backdrop-filter:blur(4px); transition:transform .3s; }
+    .service-card:hover { transform:translateY(-5px); }
+    .service-card img { width:80px; margin-bottom:15px; }
+    /* Portfolio */
+    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .portfolio-item img { width:100%; border-radius:10px; }
+    /* Testimonials */
+    .testimonials { display:grid; gap:30px; grid-template-columns:1fr; }
+    .testimonial { background:rgba(0,0,0,.3); padding:25px; border-radius:12px; backdrop-filter:blur(4px); }
+    .testimonial p { font-style:italic; margin-bottom:10px; }
+    .testimonial .author { font-weight:700; }
+    /* Contact */
+    .contact-info { text-align:center; }
+    .contact-info p { margin:5px 0; }
+    /* Footer */
+    footer { background:rgba(0,0,0,.6); padding:20px; text-align:center; font-size:.9rem; }
+    footer a { color:#fff; text-decoration:underline; margin:0 10px; }
+    /* Responsive */
+    @media(max-width: 768px) {
+      .menu-toggle { display:block; }
+      nav ul { position:absolute; top:60px; left:0; width:100%; flex-direction:column; background:rgba(0,0,0,.8); display:none; padding:20px 0; gap:15px; }
+      nav ul.show { display:flex; }
     }
+  </style>
+</head>
+<body>
+  <!-- Floating shapes -->
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  <div class="floating-shape shape3"></div>
+  <div class="floating-shape shape4"></div>
 
-    .shape1 {height: 150px;width: 150px;background: radial-gradient(#ffffff55, #ff00dc);top: 10%;left: 20%;animation-delay: 0s;}
-    .shape2 {height: 200px;width: 200px;background: radial-gradient(#ffffff55, #00ffa3);top: 40%;left: 70%;animation-delay: 2s;}
-    .shape3 {height: 100px;width: 100px;background: radial-gradient(#ffffff55, #fff600);top: 70%;left: 10%;animation-delay: 4s;}
-    .shape4 {height: 120px;width: 120px;background: radial-gradient(#ffffff55, #ff5400);top: 80%;left: 50%;animation-delay: 6s;}
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Bucky's Bombs</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <ul id="navMenu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    @keyframes floatShape {
-      0% {transform: translateY(0px) translateX(0px);}.
-      50% {transform: translateY(-30px) translateX(15px);}.
-      100% {transform: translateY(0px) translateX(0px);}.
-    }
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Bucky's Bombs</h1>
+    <p class="tagline">Explosive Custom Business Cards & Tees</p>
+    <a href="mailto:hello@buckysbombs.com?subject=Waitlist%20Signup" class="cta-btn">Join Waitlist</a>
+  </header>
 
-    @media(max-width: 600px) {
-      nav ul {flex-direction: column;background: rgba(0,0,0,0.8);position: absolute;top: 60px;left: 0;width: 100%;display: none;}
-      nav ul.show {display: flex;}
-      .menu-toggle {display: block;color: #fff;font-size: 1.5
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://placehold.co/80x80?text=BC" alt="Business Cards" />
+        <h3>Business Card Design</h3>
+        <p>Bold, memorable cards printed on premium stock.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://placehold.co/80x80?text=TS" alt="T-Shirts" />
+        <h3>Custom T-Shirts</h3>
+        <p>Vibrant screen & DTG prints that last wash after wash.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://placehold.co/80x80?text=BR" alt="Brand Kits" />
+        <h3>Brand Kits</h3>
+        <p>Logo, color palette & typography packages for startups.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>Recent Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><img src="https://placehold.co/400x300?text=Card+Mockup" alt="Card Mockup" /></div>
+      <div class="portfolio-item"><img src="https://placehold.co/400x300?text=Tee+Design" alt="Tee Design" /></div>
+      <div class="portfolio-item"><img src="https://placehold.co/400x300?text=Brand+Kit" alt="Brand Kit" /></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“Our conference swag flew off the tables thanks to Bucky's bold tees!”</p>
+        <div class="author">— Riley M.</div>
+      </div>
+      <div class="testimonial">
+        <p>“Fast turnaround and stellar quality. The cards were a hit at my trade show.”</p>
+        <div class="author">— Jordan P.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Email</strong>: hello@buckysbombs.com</p>
+      <p><strong>Phone</strong>: (608) 555-0199</p>
+      <p><strong>Address</strong>: 123 Maker Way, Madison, WI 53703</p>
+      <p><strong>Hours</strong>: Mon–Fri 9am-5pm CT</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> Bucky's Bombs LLC · <a href="#">Terms</a> · <a href="#">Privacy</a>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile nav toggle
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('navMenu').classList.toggle('show');
+    });
+    // Dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
